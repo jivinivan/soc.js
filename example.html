@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Icons</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="social-icons"></div>
+        </div>
+        <script type="text/javascript" src="build/js/si.min.js"></script>
+        <script type="text/javascript">
+            var target = document.getElementById('social-icons');
+            var social = new Social({
+                icons: {
+                    facebook: { link:'http://facebook.com' },
+                    twitter: { link:'http://facebook.com' },
+                    pinterest: { link:'http://facebook.com' },
+                    google: { link:'http://facebook.com' },
+                    linkedin: { link:'http://facebook.com' }
+                },
+                size: 90,
+                radius: 'circle',
+                color: 'auto'
+            }).render(target);
+        </script>
+    </body>
+</html>

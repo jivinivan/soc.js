@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Social Icon Builder</title>
+        <style>
+            body { 
+                font-size: 62.5%; 
+                font-family: Arial,sans-serif; 
+            }
+            .container { 
+                width:75%; 
+                margin:50px auto 0; 
+            }
+            .social-icons-container { 
+                text-align:center; 
+                height:130px; 
+            }
+            .social-builder { 
+                background:#eee; 
+                padding:30px; 
+                margin: 30px auto; 
+                width:550px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+            }
+            .social-builder ul { 
+                list-style:none; 
+                padding:0; 
+                margin:0; 
+            }
+            .social-builder ul li { 
+                border-bottom: 1px solid #ccc; 
+                display: block; 
+                overflow:hidden; 
+                padding:0 0 20px;
+                margin: 0 0 20px;
+                font-size:1.6em; 
+                color:#777; 
+            }
+            .social-builder ul li label { 
+                width:80px; 
+                display: block; 
+                float:left; 
+                line-height:20px;
+            } 
+            .social-builder ul li label.social-title { 
+                width:40px;
+                margin: 0 0 0 15px ;
+            }
+            .social-builder ul li input { 
+                display: block; 
+                float:left;
+                padding:0;
+                margin:0;
+                height:20px; 
+                -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+                -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+                box-sizing: border-box;         /* Opera/IE 8+ */
+            }
+            .social-builder ul li input.social-link { 
+                width:250px;
+            }
+            .social-code { 
+                background:#222;
+                padding:30px !important; 
+                margin: 30px auto; 
+                width:550px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                font-size:1.6em;
+            }
+            /* Pretty printing styles. Used with prettify.js. */
+            /* Vim sunburst theme by David Leibovic */
+
+            pre .str, code .str { color: #65B042; } /* string  - green */
+            pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
+            pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
+            pre .typ, code .typ { color: #89bdff; } /* type - light blue */
+            pre .lit, code .lit { color: #3387CC; } /* literal - blue */
+            pre .pun, code .pun { color: #fff; } /* punctuation - white */
+            pre .pln, code .pln { color: #fff; } /* plaintext - white */
+            pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
+            pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
+            pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
+            pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+
+            pre.prettyprint {
+                padding: 1em;
+                white-space: pre-wrap;
+                border:none !important;
+            }
+
+
+            /* Specify class=linenums on a pre to get line numbering */
+            ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
+            li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+            /* Alternate shading for lines */
+            li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+            @media print {
+              pre .str, code .str { color: #060; }
+              pre .kwd, code .kwd { color: #006; font-weight: bold; }
+              pre .com, code .com { color: #600; font-style: italic; }
+              pre .typ, code .typ { color: #404; font-weight: bold; }
+              pre .lit, code .lit { color: #044; }
+              pre .pun, code .pun { color: #440; }
+              pre .pln, code .pln { color: #000; }
+              pre .tag, code .tag { color: #006; font-weight: bold; }
+              pre .atn, code .atn { color: #404; }
+              pre .atv, code .atv { color: #060; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="social-icons-container">
+                <div id="social-icons"></div>
+            </div>
+            <div class="social-builder">
+                <form>
+                <ul>
+                    <li><label for="size">Size:</label><input name="size" id="size" type="range" value="90" min="30" max="100"></li>
+                    <li><label for="radius">Border Radius:</label><input name="radius" id="radius" type="range" value="10" min="0" max="50"></li>
+                    <li><label for="social">Facebook:</label><input name="social-facebook" type="checkbox" checked="checked"> <label class="social-title" for="social">Link:</label><input class="social-link" type="text" name="socialtext-facebook" /></li>
+                    <li><label for="social">Twitter:</label><input name="social-twitter" type="checkbox" checked="checked"> <label class="social-title" for="social">Link:</label><input class="social-link" type="text" name="socialtext-twitter" /></li>
+                    <li><label for="social">Pinterest:</label><input name="social-pinterest" type="checkbox" checked="checked"> <label class="social-title" for="social">Link:</label><input class="social-link" type="text" name="socialtext-pinterest" /></li>
+                    <li><label for="social">Google Plus:</label><input name="social-google" type="checkbox" checked="checked"> <label class="social-title" for="social">Link:</label><input class="social-link" type="text" name="socialtext-google" /></li>
+                    <li><label for="social">Yelp:</label><input name="social-yelp" type="checkbox" checked="checked"> <label class="social-title" for="social">Link:</label><input class="social-link" type="text" name="socialtext-yelp" /></li>
+                    <li><label for="social">YouTube:</label><input name="social-youtube" type="checkbox" checked="checked"> <label class="social-title" for="social">Link:</label><input class="social-link" type="text" name="socialtext-youtube" /></li>
+                    <li><label for="social">Instagram:</label><input name="social-instagram" type="checkbox" checked="checked"> <label class="social-title" for="social">Link:</label><input class="social-link" type="text" name="socialtext-instagram" /></li>
+                </ul>
+                </form>
+            </div>
+            <div class="social-code">
+                <pre class="prettyprint"></pre>
+            </div>
+        </div>
+        <script type="text/javascript" src="build/js/si.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.min.js"></script>
+        <script type="text/javascript">
+            var social;
+            var defaults = new Object();
+
+            $(document).ready(function(){
+                $("input").change(function(){
+                    if($(this)[0].type=='checkbox'){
+                        var socialKey = $(this).attr('name').replace('social-','');
+                        if($(this).prop('checked')==true){
+                            $("input[name='socialtext-"+socialKey+"']").prop('disabled',false);
+                        }else{
+                            $("input[name='socialtext-"+socialKey+"']").prop('disabled',true);
+                        }
+                    }
+                    update();
+                    gen();
+                });
+
+                $("input").keyup(function(){
+                    update();
+                    gen();    
+                });
+            });
+
+            function update(){
+                social.destroy();
+                render();
+            }
+
+            function render(){
+                //get config values
+                defaults.icons = new Object();
+
+                //get social links
+                var inputs = $("form").serializeArray();
+                for (var key in inputs) {
+                    var socialKey;
+
+                    if(inputs[key].name.indexOf('social-') != -1 && inputs[key].value != "" ){
+                        socialKey = inputs[key].name.replace('social-','');
+                        defaults.icons[socialKey] = new Object();
+                    }
+
+                    if(inputs[key].name.indexOf('socialtext-') != -1 ){
+                        socialKey = inputs[key].name.replace('socialtext-','');
+                        defaults.icons[socialKey].link = inputs[key].value;
+                    }
+
+
+                    inputs['socialtext-'+key];
+                };
+
+                defaults.size = parseInt( $("#size").val() );
+                defaults.radius = parseInt( $("#radius").val() );
+                defaults.color = 'auto';
+
+
+                //render icons
+                var target = document.getElementById('social-icons');
+                social = new Social(defaults);
+                social.render(target);
+                gen();
+            }
+
+            function gen(){
+                var code = "";
+                code += "var defaults = ";
+                code += JSON.stringify(defaults, false, 2);
+                code += ";\n";
+                code += "var target = document.getElementById('social-icons');\n";
+                code += "var social = new Social(defaults).render(target);"
+                $(".social-code pre").html(code);
+                $(".social-code pre").removeClass('prettyprinted');
+                prettyPrint();
+            }
+
+            render();
+        </script>
+    </body>
+</html>
