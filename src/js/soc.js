@@ -2,14 +2,14 @@
 	"use strict";
 
 	var services = {
-	    facebook: { identifier: "facebook", title:"Facebook", color:"#3B5998", character:"b"},
-	    twitter: { identifier: "twitter", title:"Twitter", color:"#55ACEE", character:"a"},
-	    pinterest: { identifier: "pinterest", title:"Pinterest", color:"#CB2027", character:"d"},
-	   	google: { identifier: "google", title:"Google Plus", color:"#DD4B39", character:"c"},
-	    youtube: { identifier: "youtube", title:"You Tube", color:"#BB0000", character:"r"},
-	    linkedin: { identifier: "linkedin", title:"LinkedIn", color:"#007BB6", character:"j"},
-	    instagram: { identifier: "instagram", title:"Instagram", color:"#517FA4", character:"x"},
-	    yelp: { identifier: "yelp", title:"Yelp", color:"#C83218", character:"y"}
+	    facebook: { identifier: "facebook", title:"Facebook", color:"#3B5998"},
+	    twitter: { identifier: "twitter", title:"Twitter", color:"#55ACEE"},
+	    pinterest: { identifier: "pinterest", title:"Pinterest", color:"#CB2027"},
+	   	google: { identifier: "google", title:"Google Plus", color:"#DD4B39"},
+	    youtube: { identifier: "youtube", title:"You Tube", color:"#BB0000"},
+	    linkedin: { identifier: "linkedin", title:"LinkedIn", color:"#007BB6"},
+	    instagram: { identifier: "instagram", title:"Instagram", color:"#517FA4"},
+	    yelp: { identifier: "yelp", title:"Yelp", color:"#C83218"}
   	};
 
 	var defaults = {
@@ -17,16 +17,16 @@
 	    size: 40,
 	    radius: "auto",
 	    color: "auto",
-	    stylesheet: "http://social.nws.co/build/css/social-icons.css"
+	    stylesheet: "soc.min.css"
 	};
 
-	//utulity function to extend config with defaults
+	//utility function to extend config with defaults
 	function extend(a, b) {
 	    for( var i in b ) {
 	      a[i] = b[i];
 	    }
 	    return a;
-	}
+	}	
 
 	//set style of an icon
 	function setStyle(el,settings,iconDefaults){
@@ -52,6 +52,9 @@
 		}else{
 			el.style.backgroundColor = settings.color;
 		}
+
+		//show the icon
+		el.style.display = "block";
 	}
 
 	function loadDefaultStyle(stylesheet){
@@ -96,7 +99,6 @@
 			var _this = this;
 
 			//make element available
-			_this.el = el;
 			_this.container = document.createElement('ul');
 
 			//create icon list container

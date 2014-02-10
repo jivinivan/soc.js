@@ -26,7 +26,7 @@ module.exports = function(grunt){
 		uglify: {
 		    build: {
 		        files: {
-		            'build/js/si.min.js': ['src/js/si.js']
+		            'soc.min.js': ['src/js/soc.js']
 		        }
 		    }
 		},
@@ -40,22 +40,22 @@ module.exports = function(grunt){
 		            consolidateMediaQueries:    true
 		        },
 		        files: {
-		            'build/css/social-icons.css': 'build/css/social-icons.css',
+		            'soc.min.css': 'soc.min.css',
 		        }
 		    }
 		},
 
 		cssmin: {
 		    build: {
-		        src: 'build/css/social-icons.css',
-		        dest: 'build/css/social-icons.css'
+		        src: 'soc.min.css',
+		        dest: 'soc.min.css'
 		    }
 		},
 
 		sass: {
 		    build: {
 		        files: {
-		            'build/css/social-icons.css': 'src/sass/social-icons.scss'
+		            'soc.min.css': 'src/sass/soc.scss'
 		        }
 		    }
 		},
@@ -66,11 +66,11 @@ module.exports = function(grunt){
 		        tasks: ['htmlhint']
 		    },
 		    js: {
-		        files: ['src/js/si.js'],
+		        files: ['src/js/soc.js'],
 		        tasks: ['uglify']
 		    },
 		    css: {
-		        files: ['src/sass/social-icons.scss'],
+		        files: ['src/sass/soc.scss'],
 		        tasks: ['buildcss']
 		    }
 		}
