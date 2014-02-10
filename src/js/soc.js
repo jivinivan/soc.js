@@ -17,7 +17,7 @@
 	    size: 40,
 	    radius: "auto",
 	    color: "auto",
-	    stylesheet: "http://socjs.com/soc.min.css"
+	    stylesheet: "//socjs.com/soc.min.css"
 	};
 
 	//utility function to extend config with defaults

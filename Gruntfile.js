@@ -50,7 +50,7 @@ module.exports = function(grunt){
 		        src: 'soc.min.css',
 		        dest: 'soc.min.css'
 		    }
-		},
+		},	
 
 		sass: {
 		    build: {
