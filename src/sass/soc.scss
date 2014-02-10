@@ -38,7 +38,7 @@
 	@include vendorize('box-sizing','border-box');
 	text-decoration:none;
 	text-align:center;
-	color:#fff;
+	color:#fff !important;
 	@include inline-block();
 	margin:0 10px 0 0;
 	&.si-last{
