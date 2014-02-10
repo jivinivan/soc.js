@@ -23,31 +23,7 @@
 	zoom:1;
 }
 
-//horizontal inline-block list
-.si-horizontal {
-	list-style:none;
-	padding:0;
-	margin:0;
-
-	li {
-		@include inline-block();
-		margin:0 10px 0 0;
-		&.si-last{
-			margin:0;
-		}
-	}
-}
-
-//hide the accessibility text
-.si-accessible {
-	display:block;
-	position:absolute;
-	top:-9999px;
-	left:-9999px;
-}
-
 .si {
-	display:none;
 	font-family: 'si';
 	font-style: normal;
 	font-weight: normal;
@@ -63,6 +39,11 @@
 	text-decoration:none;
 	text-align:center;
 	color:#fff;
+	@include inline-block();
+	margin:0 10px 0 0;
+	&.si-last{
+		margin:0;
+	}
 }
 
 //position fixes

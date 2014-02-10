@@ -22,22 +22,20 @@
 
 	//utility function to extend config with defaults
 	function extend(a, b) {
-	    for( var i in b ) {
-	      a[i] = b[i];
-	    }
+	    for( var i in b )
+	    	a[i] = b[i];
 	    return a;
 	}	
 
 	//set style of an icon
 	function setStyle(el,settings,iconDefaults){
-		if(settings.radius=='auto'){
-			// the auto radius is 15% of the size of the icon
-			settings.radius = settings.size*.15;
-		}
 
-		if(settings.radius=='circle'){
+		// the auto radius is 15% of the size of the icon
+		if(settings.radius=='auto')
+			settings.radius = settings.size*.15;
+
+		if(settings.radius=='circle')
 			settings.radius = settings.size*.5;
-		}
 
 		el.style.borderRadius = settings.radius+"px";
 		el.style.MozBorderRadius = settings.radius+"px";
@@ -46,15 +44,11 @@
 		el.style.height = settings.size+"px";
 		el.style.fontSize = (settings.size*.55)+"px";
 		el.style.lineHeight = settings.size+"px";
+		el.style.backgroundColor = settings.color;
 
-		if(settings.color=='auto'){
+		if(settings.color=='auto')
 			el.style.backgroundColor = iconDefaults.color;
-		}else{
-			el.style.backgroundColor = settings.color;
-		}
 
-		//show the icon
-		el.style.display = "block";
 	}
 
 	function loadDefaultStyle(stylesheet){
@@ -73,16 +67,23 @@
 		iconEl.className = "si si-"+icon.identifier;
 		iconEl.href = settings.icons[icon.identifier].link;
 		iconEl.target = "_blank";
-		iconEl.innerHTML = "<span class='si-accessible'>"+icon.title+"</span>";
+
+		//add text for screen readers
+		var iconText = document.createElement('span');
+		iconText.style.display = "block";
+		iconText.style.position = "absolute";
+		iconText.style.left = "-9999px";
+		iconText.innerHTML = icon.title;
+		iconEl.appendChild(iconText);
 
 		//set the icon style
 		setStyle(iconEl,settings,icon);
 
 		//append icon to list element
-		var iconItem = document.createElement('li');
-		iconItem.appendChild(iconEl);
+		//var iconItem = document.createElement('li');
+		//iconItem.appendChild(iconEl);
 
-		return iconItem;
+		return iconEl;
 	}
 
 	// social plugin constructor
@@ -99,7 +100,7 @@
 			var _this = this;
 
 			//make element available
-			_this.container = document.createElement('ul');
+			_this.container = document.createElement('div');
 
 			//create icon list container
 			_this.container.className = "si-horizontal si-container";
