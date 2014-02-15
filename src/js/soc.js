@@ -1,24 +1,46 @@
+/**
+ * Copyright (c) 2014 Ivan Sugerman
+ * Licensed under the MIT license
+ */
 (function (window) {
 	"use strict";
 
 	//defauls for icons
-	var settings = {
+	var defaults = {
 	    size: "30px", //width in pixels
 	    radius: "auto", //border radius in px, auto will be proportional to size
 	    spacing: "10px", //spacing between icons
 	    iconcolor: "#fff", 
 	    buttoncolor: "auto"
-	};
+	}, settings = {};
 
-	//merge data atributes with defaults
+	//getElementsByClassName function for older browsers
+	if ( !document.getElementsByClassName ) {
+        document.getElementsByClassName = function( classname ) {
+            var elArray = [];
+            var tmp = document.getElementsByTagName("*");
+            var regex = new RegExp("(^|\s)" + classname + "(\s|$)");
+            for ( var i = 0; i < tmp.length; i++ ) {
+ 
+                if ( regex.test(tmp[i].className) ) {
+                    elArray.push(tmp[i]);
+                }
+            }
+            return elArray;
+        };
+    }
+
+	//get data config fron icon container else use defaults. 
 	function loadDataAttr(el){
-
-		for (var key in settings) {
+		for (var key in defaults) {
 			if(el.getAttribute('data-'+key))
 				settings[key]=el.getAttribute('data-'+key);
+			else
+				settings[key] = defaults[key];
 		}
 	}
 
+	//loop through the icons and set the style
 	function render(icons){
 		for (var i = 0; i < icons.length; i++) {
 			setStyle(icons[i]);
@@ -30,6 +52,7 @@
 
 	//set style of an icon
 	function setStyle(el){
+		//reset the inline style from other icons on the page
 		var sizeNum = parseInt( settings.size.replace("px","") );
 
 		// the auto radius is 15% of the size of the icon
@@ -55,22 +78,22 @@
 		el.style.color = settings.iconcolor;
 	}
 
-	//simple function to check ie version. I can't believe we need icon. 
+	//check ie version 
 	function getIEVersion()
 	{
-	  var rv = -1; // Return value assumes failure.
-	  if (navigator.appName == 'Microsoft Internet Explorer')
-	  {
-	    var ua = navigator.userAgent;
-	    var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
-	    if (re.exec(ua) != null)
-	      rv = parseFloat( RegExp.$1 );
-	  }
-	  return rv;
+		var rv = -1; // Return value assumes failure.
+		if (navigator.appName == 'Microsoft Internet Explorer')
+		{
+			var ua = navigator.userAgent;
+	    	var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+	    	if (re.exec(ua) != null)
+	    		rv = parseFloat( RegExp.$1 );
+	  	}
+	  	return rv;
 	}
 
+	//:before psudeo elements and icon fonts don't play well in ie8 so we need to force redraw the :before elements after the font loads. Ick.
 	function initIE(){
-		//:before and icon fonts don't play well in ie8 so we need to force redraw the :before elements after the font loads. Ick.
 		var head = document.getElementsByTagName('head')[0];
 		var style = document.createElement('style');
 		style.type = 'text/css';
@@ -89,19 +112,16 @@
 	Soc.prototype = {
 		init: function () {
 			window.onload = function() {
-				this.el = document.getElementById('soc');
-				this.icons = this.el.getElementsByTagName('a');
-				loadDataAttr(this.el);
-
 				if(getIEVersion()=='8')
 					initIE();
-				
-				render(this.icons);
+
+				this.iconSets = document.getElementsByClassName('soc');
+
+				for (var i = 0; i < this.iconSets.length; i++) {	
+					loadDataAttr(this.iconSets[i]);	
+					render( this.iconSets[i].getElementsByTagName('a') );
+				};
 			}
-		},
-		update: function(){
-			loadDataAttr(this.el);
-			render(this.icons);
 		}
 	};
 
