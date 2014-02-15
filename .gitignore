@@ -3,6 +3,8 @@
 .LSOverride
 .sass-cache
 node_modules
+src/sass/icons.json
+src/sass/icons.php
 
 # Icon must ends with two \r.
 Icon
