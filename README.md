@@ -38,7 +38,7 @@ For an interactive demo and a list of all supported options and icons please ref
 You're right, it is not needed. You could make a few simple adjustments to the SASS and be off and running, but we have bigger plans for this which requires a more dynamic nature. More to come!
 
 ## Thanks To
-Special thanks to [Socicon](http://socicon.com/) for the icons font.
+Special thanks to [Socicon](http://socicon.com/) for the icon font.
 Soc.js is brought to you by [Ivan Sugerman](https://twitter.com/jivinivan) and [Next Wave](http://nws.co)
 
 ## License
