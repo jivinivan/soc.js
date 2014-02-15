@@ -12,7 +12,7 @@ An easier way to create social icons. Socjs was built for [Next Wave Sites](http
  * MIT License
 
 ## Demo
-For an interactive demo and a list of all supported options and icons please refer to the [project's homepage](http://socjs.com/dev).
+For an interactive demo and a list of all supported options and icons please refer to the [project's homepage](http://ivansugerman.com/soc.js/).
 
 ## Usage
 
