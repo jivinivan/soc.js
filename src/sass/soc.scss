@@ -1,0 +1,132 @@
+@mixin vendorize($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+@mixin inline-block(){
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+}
+
+@font-face {
+    font-family: 'si';
+    src: url('font/socicon-webfont.eot');
+    src: url('font/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/socicon-webfont.woff') format('woff'),
+         url('font/socicon-webfont.ttf') format('truetype'),
+         url('font/socicon-webfont.svg#siregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+v\:* { behavior: url(#default#VML); }
+
+.soc {
+	overflow:hidden;
+}
+
+.soc a{
+	font-family: si !important;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow:hidden;
+	width:1px;
+	height:1px;
+	line-height:1px;
+	font-size:1px;
+
+	@include vendorize('box-sizing','border-box');
+	text-decoration:none;
+	text-align:center;
+	display:block;
+
+	@include inline-block();
+
+	&.soc-icon-last{
+		margin:0 !important;
+	}
+
+	span{
+		position:absolute;
+		left:-999px;
+
+	}
+
+}
+
+//position fixes
+.soc-facebook:before{
+	@include inline-block();
+	margin:1px auto 0;
+}
+
+//icon defaults
+.soc-easid { background: #1ABC9C; &:before{ content: "5"; } }
+.soc-twitter { background: #4da7de; &:before{ content: "a"; } }
+.soc-facebook { background: #3e5b98; &:before{ content: "b"; } }
+.soc-google { background: #d93e2d; &:before{ content: "c"; } }
+.soc-pinterest { background: #c92619; &:before{ content: "d"; } }
+.soc-foursquare { background: #23b7e0; &:before{ content: "e"; } }
+.soc-yahoo { background: #6E2A85; &:before{ content: "f"; } }
+.soc-skype { background: #28abe3; &:before{ content: "g"; } }
+.soc-yelp { background: #c83218; &:before{ content: "h"; } }
+.soc-feedburner { background: #FFCC00; &:before{ content: "i"; } }
+.soc-linkedin { background: #3371b7; &:before{ content: "j"; } }
+.soc-viadeo { background: #e4a000; &:before{ content: "k"; } }
+.soc-xing { background: #005a60; &:before{ content: "l"; } }
+.soc-myspace { background: #323232; &:before{ content: "m"; } }
+.soc-soundcloud { background: #fe3801; &:before{ content: "n"; } }
+.soc-spotify { background: #7bb342; &:before{ content: "o"; } }
+.soc-grooveshark { background: #000000; &:before{ content: "p"; } }
+.soc-lastfm { background: #d41316; &:before{ content: "q"; } }
+.soc-youtube { background: #e02a20; &:before{ content: "r"; } }
+.soc-vimeo { background: #51b5e7; &:before{ content: "s"; } }
+.soc-dailymotion { background: #004e72; &:before{ content: "t"; } }
+.soc-vine { background: #00b389; &:before{ content: "u"; } }
+.soc-flickr { background: #1e1e1b; &:before{ content: "v"; } }
+.soc-500px { background: #58a9de; &:before{ content: "w"; } }
+.soc-instagram { background: #9c7c6e; &:before{ content: "x"; } }
+.soc-wordpress { background: #464646; &:before{ content: "y"; } }
+.soc-tumblr { background: #45556c; &:before{ content: "z"; } }
+.soc-blogger { background: #ec661c; &:before{ content: "A"; } }
+.soc-technorati { background: #5cb030; &:before{ content: "B"; } }
+.soc-reddit { background: #e74a1e; &:before{ content: "C"; } }
+.soc-dribbble { background: #e84d88; &:before{ content: "D"; } }
+.soc-stumbleupon { background: #e64011; &:before{ content: "E"; } }
+.soc-digg { background: #1d1d1b; &:before{ content: "F"; } }
+.soc-envato { background: #597c3a; &:before{ content: "G"; } }
+.soc-behance { background: #000000; &:before{ content: "H"; } }
+.soc-delicious { background: #020202; &:before{ content: "I"; } }
+.soc-deviantart { background: #c5d200; &:before{ content: "J"; } }
+.soc-forrst { background: #5B9A68; &:before{ content: "K"; } }
+.soc-play { background: #000000; &:before{ content: "L"; } }
+.soc-zerply { background: #9DBC7A; &:before{ content: "M"; } }
+.soc-wikipedia { background: #000000; &:before{ content: "N"; } }
+.soc-apple { background: #B9BFC1; &:before{ content: "O"; } }
+.soc-flattr { background: #F67C1A; &:before{ content: "P"; } }
+.soc-github { background: #5380c0; &:before{ content: "Q"; } }
+.soc-chimein { background: #888688; &:before{ content: "R"; } }
+.soc-friendfeed { background: #2F72C4; &:before{ content: "S"; } }
+.soc-newsvine { background: #075B2F; &:before{ content: "T"; } }
+.soc-identica { background: #000000; &:before{ content: "U"; } }
+.soc-bebo { background: #EF1011; &:before{ content: "V"; } }
+.soc-zynga { background: #DC0606; &:before{ content: "W"; } }
+.soc-steam { background: #8F8D8A; &:before{ content: "X"; } }
+.soc-xbox { background: #92C83E; &:before{ content: "Y"; } }
+.soc-windows { background: #00BDF6; &:before{ content: "Z"; } }
+.soc-outlook { background: #0072C6; &:before{ content: "1"; } }
+.soc-coderwall { background: #3E8DCC; &:before{ content: "2"; } }
+.soc-tripadvisor { background: #000000; &:before{ content: "3"; } }
+.soc-netcodes { background: #2E3436; &:before{ content: "4"; } }
+.soc-lanyrd { background: #3c80c9; &:before{ content: "7"; } }
+.soc-slideshare { background: #4ba3a6; &:before{ content: "8"; } }
+.soc-buffer { background: #000000; &:before{ content: "9"; } }
+.soc-rss { background: #f26109; &:before{ content: ","; } }
+.soc-vkontakte { background: #5a7fa6; &:before{ content: ";"; } }
+.soc-disqus { background: #2e9fff; &:before{ content: ":"; } }
