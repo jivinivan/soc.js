@@ -111,17 +111,21 @@
 
 	Soc.prototype = {
 		init: function () {
+			var _this = this;
 			window.onload = function() {
 				if(getIEVersion()=='8')
 					initIE();
 
-				this.iconSets = document.getElementsByClassName('soc');
-
-				for (var i = 0; i < this.iconSets.length; i++) {	
-					loadDataAttr(this.iconSets[i]);	
-					render( this.iconSets[i].getElementsByTagName('a') );
-				};
+				_this.render();
 			}
+		},
+		render: function(){
+			this.iconSets = document.getElementsByClassName('soc');
+
+			for (var i = 0; i < this.iconSets.length; i++) {	
+				loadDataAttr(this.iconSets[i]);	
+				render( this.iconSets[i].getElementsByTagName('a') );
+			};
 		}
 	};
 
