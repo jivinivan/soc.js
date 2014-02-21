@@ -53,6 +53,9 @@
 	//set style of an icon
 	function setStyle(el){
 		//reset the inline style from other icons on the page
+		el.setAttribute('style','');
+
+		//remove px unit for calculations
 		var sizeNum = parseInt( settings.size.replace("px","") );
 
 		// the auto radius is 15% of the size of the icon
