@@ -19,7 +19,10 @@ ul,p { font-size:1.6em; }
 
 .social-icons-container { padding: 0 0 60px; }
 .social-icons-example { padding:10px 0 35px; }
+.social-icons-example-addthis pre { width:750px !important; }
+
 .section { padding: 0 0 35px; }
+.add-this-link { color:#ff5c3d; }
 /* Pretty printing styles. Used with prettify.js. */
 /* Vim sunburst theme by David Leibovic */
 
