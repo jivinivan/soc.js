@@ -1,5 +1,5 @@
 {
-  "name": "soc.js",
+  "name": "socjs",
   "title": "Soc.js",
   "version": "1.0.1",
   "homepage": "https://github.com/jivinivan/soc.js",
@@ -31,6 +31,10 @@
   ],
   "license": "MIT",
   "ignore": [
-    "**/.*"
+    "**/.*",
+    "bower.json",
+    "src",
+    "package.json",
+    "gruntfile.js"
   ]
 }
