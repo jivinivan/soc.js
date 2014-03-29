@@ -14,6 +14,13 @@ An easier way to create social icons. Socjs was built for [Next Wave Sites](http
 ## Demo
 For an interactive demo and a list of all supported options and icons please refer to the [project's homepage](http://ivansugerman.com/soc.js/).
 
+## Installation
+`bower install socjs`
+
+or
+
+[Download Files](https://github.com/jivinivan/soc.js/archive/master.zip)
+
 ## Usage
 
 ### Place the following in the ``<head></head>`` of your site.
