@@ -8,6 +8,7 @@ h1 { line-height:130px; margin:0; font-size:13em; font-weight:900;  }
 h2 { font-size:30px; }
 h3 { margin:0; font-size:1.6em; }
 ul,p { font-size:1.6em; }
+a { color:#ff8135; }
 
 .container { 
     width:75%; 
@@ -22,6 +23,22 @@ ul,p { font-size:1.6em; }
 .social-icons-example-addthis pre { width:750px !important; }
 
 .section { padding: 0 0 35px; }
+.download { 
+  color:#fff; 
+  font-weight:bold; 
+  font-size:1.7em;  
+  background:#000;
+  display: inline-block;
+  *display: inline;
+  zoom:1;
+  margin: 5px 0 15px;
+  padding:0 20px;
+  line-height: 40px;
+  border-radius: 4px;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  text-decoration:none;
+}
 .add-this-link { color:#ff5c3d; }
 /* Pretty printing styles. Used with prettify.js. */
 /* Vim sunburst theme by David Leibovic */
@@ -43,7 +60,7 @@ pre.prettyprint {
     white-space: pre-wrap;
     border:none !important;
     background:#222;
-    padding:30px !important; 
+    padding:20px !important; 
     width:650px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -51,10 +68,10 @@ pre.prettyprint {
     display: inline-block;
     *display: inline;
     zoom:1;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    font-size:1.6em;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size:1.7em;
 }
 
 
