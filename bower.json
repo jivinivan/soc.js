@@ -1,0 +1,37 @@
+{
+  "name": "soc.js",
+  "title": "Soc.js",
+  "version": "1.0.1",
+  "homepage": "https://github.com/jivinivan/soc.js",
+  "author": {
+    "name": "Ivan Sugerman",
+    "url": "http://ivansugerman.com"
+  },
+  "description": "An easier way to create social icons and buttons. Retina ready. No Images.",
+  "main": [ 
+    "soc.min.js",
+    "soc.min.css",
+    "font/socicon-webfont.eot",
+    "font/socicon-webfont.svg",
+    "font/socicon-webfont.ttf",
+    "font/socicon-webfont.woff"
+  ],
+  "keywords": [
+    "social",
+    "icons",
+    "retina",
+    "icons",
+    "social",
+    "icon",
+    "font",
+    "social",
+    "buttons",
+    "retina",
+    "buttons"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    ""
+  ]
+}
